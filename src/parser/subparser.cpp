@@ -1278,6 +1278,8 @@ void explodeStdVless(std::string vless, Proxy &node)
     const std::string stdvless_matcher = R"(^([\da-f]{4}(?:[\da-f]{4}-){4}[\da-f]{12})@(.+):(\d+)(?:\/?\?(.*))?$)";
     if(regGetMatch(vless, stdvless_matcher, 5, 0, &id, &add, &port, &addition))
         return;
+    const std::string add_matcher = R"(^\[(.+)\]$)";
+    regGetMatch(&add, add_matcher, 2, 0, &add);
 
     tls = getUrlArg(addition,"security");
     net = getUrlArg(addition,"type");
