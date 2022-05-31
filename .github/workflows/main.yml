@@ -105,6 +105,7 @@ jobs:
       - name: Draft Release
         uses: softprops/action-gh-release@v1
         with:
+          tag_name: Alpha
           files: subconverter_armhf.tar.gz
           release: true
 
@@ -130,6 +131,7 @@ jobs:
       - name: Draft Release
         uses: softprops/action-gh-release@v1
         with:
+          tag_name: Alpha
           files: subconverter_aarch64.tar.gz
           release: true
 
